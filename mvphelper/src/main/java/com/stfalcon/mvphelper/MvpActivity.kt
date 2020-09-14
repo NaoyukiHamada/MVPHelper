@@ -26,7 +26,7 @@ abstract class MvpActivity<PRESENTER : IPresenter<VIEW>, VIEW> : DaggerAppCompat
         super.onCreate(savedInstanceState)
         setContentView(getLayoutResId())
         firstStart = true
-        supportLoaderManager.initLoader(0, Bundle.EMPTY, this).startLoading()
+        LoaderManager.getInstance(this).initLoader(0, Bundle.EMPTY, this).startLoading()
     }
 
     override fun onStart() {

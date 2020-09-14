@@ -30,12 +30,12 @@ abstract class MvpFragment<PRESENTER : IPresenter<VIEW>, in VIEW> : DaggerFragme
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return inflater?.inflate(getLayoutResId(), null)
+        return inflater.inflate(getLayoutResId(), null)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        loaderManager.initLoader(0, Bundle.EMPTY, this).startLoading()
+        LoaderManager.getInstance(this).initLoader(0, Bundle.EMPTY, this).startLoading()
     }
 
     override fun onStart() {
