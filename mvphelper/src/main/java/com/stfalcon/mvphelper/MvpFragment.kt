@@ -29,7 +29,7 @@ abstract class MvpFragment<PRESENTER : IPresenter<VIEW>, in VIEW> : DaggerFragme
         firstStart = true
     }
 
-    override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater?.inflate(getLayoutResId(), null)
     }
 
@@ -49,7 +49,7 @@ abstract class MvpFragment<PRESENTER : IPresenter<VIEW>, in VIEW> : DaggerFragme
         super.onStop()
     }
 
-    override fun onCreateLoader(id: Int, args: Bundle): Loader<PRESENTER> = presenterLoader
+    override fun onCreateLoader(id: Int, args: Bundle?): Loader<PRESENTER> = presenterLoader
 
     override fun onLoadFinished(loader: Loader<PRESENTER>, presenter: PRESENTER) {
         this.presenter = presenter

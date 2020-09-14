@@ -40,7 +40,7 @@ abstract class MvpActivity<PRESENTER : IPresenter<VIEW>, VIEW> : DaggerAppCompat
         super.onStop()
     }
 
-    override fun onCreateLoader(id: Int, args: Bundle): Loader<PRESENTER> = presenterLoader
+    override fun onCreateLoader(id: Int, args: Bundle?): Loader<PRESENTER> = presenterLoader
 
     override fun onLoadFinished(loader: Loader<PRESENTER>, presenter: PRESENTER) {
         this.presenter = presenter
