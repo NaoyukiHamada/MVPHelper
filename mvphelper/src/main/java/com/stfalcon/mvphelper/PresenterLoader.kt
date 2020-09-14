@@ -1,7 +1,7 @@
 package com.stfalcon.mvphelper
 
 import android.content.Context
-import android.support.v4.content.Loader
+import androidx.loader.content.Loader
 import javax.inject.Inject
 
 /*
